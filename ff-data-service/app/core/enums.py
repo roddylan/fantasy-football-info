@@ -9,3 +9,10 @@ class PlayerStatus(Enum):
     NA = "NA"
     
     
+class Position(Enum):
+    QB = "QB"
+    WR = "WR"
+    RB = "RB"
+    TE = "TE"
+    K = "K"
+    DST = "D/ST"
