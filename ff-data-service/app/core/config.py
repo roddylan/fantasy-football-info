@@ -1,9 +1,11 @@
 # app/core/config.py
 
 from pydantic_settings import BaseSettings
-from dotenv import load_dotenv # temporary
+from app.core.utils import is_running_in_docker
+if not is_running_in_docker():
+    from dotenv import load_dotenv # temporary
 
-load_dotenv()
+    load_dotenv()
 
 class Settings(BaseSettings):
     db_user: str
