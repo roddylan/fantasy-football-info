@@ -7,4 +7,4 @@ router = APIRouter()
 
 @router.get('/all')
 def get_all_players():
-    pass
+    return {'msg': 'success'}
