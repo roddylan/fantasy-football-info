@@ -22,10 +22,7 @@ class PlayerStatus(Base):
     week: Mapped[int] = mapped_column(primary_key=True)
     status: Mapped[enums.PlayerStatus] = mapped_column(Enum(enums.PlayerStatus))
     
-    
-    player_id = relationship("Player")
-    
-    
+    player: Mapped[Player] = relationship("Player", backref='statuses')
 class PlayerTeam(Base):
     __tablename__ = 'player_team'
     player_id: Mapped[str] = mapped_column(ForeignKey("player.id"), primary_key=True)

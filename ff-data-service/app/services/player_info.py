@@ -36,8 +36,8 @@ class PlayerInfoService:
                     try:
                         player = Player(
                             id=player_id,
-                            name=player_name,
-                            positions=[enums.Position(pos)]
+                            name=player_name.upper(),
+                            positions=[enums.Position(pos.upper())]
                         )
                         db.add(player)
                         db.commit()

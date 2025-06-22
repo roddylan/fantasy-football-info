@@ -23,5 +23,5 @@ def fill_players(db: Session = Depends(get_db)):
         
 
 @router.post('/fill_player')
-def fill_players(player_name: str, db: Session = Depends(get_db)):
+def fill_player(player_name: str, db: Session = Depends(get_db)):
     pass
