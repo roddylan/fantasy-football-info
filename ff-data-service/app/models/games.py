@@ -3,5 +3,5 @@
 from app.models.base import Base
 
 
-class GameStatService(Base):
-    pass
+# class GameStatService(Base):
+#     pass
