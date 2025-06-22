@@ -6,4 +6,4 @@ from app.api import players
 router = APIRouter()
 
 
-router.include_router(players.router, '/players')
+router.include_router(players.router, prefix='/players', tags=['player'])
