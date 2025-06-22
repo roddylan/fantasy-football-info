@@ -23,7 +23,7 @@ class PlayerInfoService:
                 res = requests.get(self._pfr_web(letter.upper()))
                 if res.status_code != 200:
                     continue
-                html = BeautifulSoup(res.text)
+                html = BeautifulSoup(res.text, 'lxml')
                 links: List[Tag] = html.find("div", {"id": "all_players"}).find_all("a")
                 # res.close()
                 for link in links:
