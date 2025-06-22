@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup, Tag
 from app.models.players import Player
 from app.core import enums
 from fastapi import status
+import re
 
 class PlayerInfoService:
     def __init__(self):
@@ -30,7 +31,7 @@ class PlayerInfoService:
                     player_name = link.text
                     player_id = link.get("href").split("/")[-1].split(".")[0]
                     # active = link.parent.name == "b"
-                    pos = res.findall(r"\((.*?)\)", link.next_sibling.strip())[0]
+                    pos = re.findall(r"\((.*?)\)", link.next_sibling.strip())[0]
 
                     try:
                         player = Player(
