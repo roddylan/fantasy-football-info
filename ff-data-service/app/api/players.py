@@ -1,6 +1,8 @@
 # app/api/players.py
 
 from fastapi import APIRouter, Depends
+from app.core.dependencies import get_db
+from sqlalchemy.orm import Session
 
 router = APIRouter()
 
@@ -11,5 +13,5 @@ def get_all_players():
 
 
 @router.post('/fill_all')
-def fill_players():
+def fill_players(db: Session = Depends(get_db)):
     pass
