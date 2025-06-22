@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "beautifulsoup4>=4.13.4",
     "confluent-kafka>=2.10.1",
     "fastapi[service,standard]>=0.115.13",
     "psycopg2-binary>=2.9.10",
