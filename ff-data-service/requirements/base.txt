@@ -49,6 +49,8 @@ idna==3.10
     #   requests
 jinja2==3.1.6
     # via fastapi
+lxml==5.4.0
+    # via fantasy-football-info (pyproject.toml)
 markdown-it-py==3.0.0
     # via rich
 markupsafe==3.0.2

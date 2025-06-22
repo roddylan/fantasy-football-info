@@ -8,6 +8,7 @@ dependencies = [
     "beautifulsoup4>=4.13.4",
     "confluent-kafka>=2.10.1",
     "fastapi[service,standard]>=0.115.13",
+    "lxml>=5.4.0",
     "psycopg2-binary>=2.9.10",
     "pydantic>=2.11.7",
     "pydantic-settings>=2.10.0",

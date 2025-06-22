@@ -47,6 +47,7 @@ class PlayerInfoService:
                     except IntegrityError:
                         db.rollback()
             return status.HTTP_200_OK
-        except Exception:
+        except Exception as e:
+            print(e)
             return status.HTTP_500_INTERNAL_SERVER_ERROR
         
