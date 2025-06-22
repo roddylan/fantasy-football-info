@@ -1,7 +1,9 @@
 # app/core/config.py
 
 from pydantic_settings import BaseSettings
+from dotenv import load_dotenv # temporary
 
+load_dotenv()
 
 class Settings(BaseSettings):
     db_user: str
@@ -11,5 +13,5 @@ class Settings(BaseSettings):
     
     @property
     def db_url(self):
-        return f'postgres://{self.db_user}:{self.db_password}@{self.db_host}/football_info'
+        return f'postgresql://{self.db_user}:{self.db_password}@{self.db_host}/football_info'
 settings = Settings()
