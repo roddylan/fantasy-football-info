@@ -3,9 +3,12 @@
 from pydantic_settings import BaseSettings
 from app.core.utils import is_running_in_docker
 if not is_running_in_docker():
-    from dotenv import load_dotenv # temporary
+    try:
+        from dotenv import load_dotenv # temporary
 
-    load_dotenv()
+        load_dotenv()
+    except ImportError:
+        print("Failed to import")
 
 class Settings(BaseSettings):
     db_user: str
